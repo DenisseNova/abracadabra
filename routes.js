@@ -29,4 +29,17 @@ router.get('/abracadabra/juego/:usuario', (req,res) => {
   res.send(`Usuario ${usuario} existe`)
 })
 
+router.get('/abracadabra/conejo/:n', (req, res) => {
+  const n = Math.floor(Math.random() * (4 - 1)) +1;
+  console.log(n)
+  const numero = req.params.numero;
+  numero == n 
+    ? res.sendFile(__dirname + '/assets/img/conejito.jpg')
+    : res.sendFile(__dirname + '/assets/img/voldemort.jpg')
+})
+
+router.get('*', (req, res) => {
+  res.send('<center><h1> Sorry, no hay nada en esta ruta :/ </h1> </center>')
+})
+
 module.exports = router;
