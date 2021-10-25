@@ -30,9 +30,9 @@ router.get('/abracadabra/juego/:usuario', (req,res) => {
 })
 
 router.get('/abracadabra/conejo/:n', (req, res) => {
-  const n = Math.floor(Math.random() * (4 - 1)) +1;
+  const n = Math.floor(Math.random() * (4 - 1)) + 1;
   console.log(n)
-  const numero = req.params.numero;
+  const numero = req.params.n;
   numero == n 
     ? res.sendFile(__dirname + '/assets/img/conejito.jpg')
     : res.sendFile(__dirname + '/assets/img/voldemort.jpg')
